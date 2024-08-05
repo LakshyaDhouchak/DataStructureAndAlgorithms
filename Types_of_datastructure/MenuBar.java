@@ -5,6 +5,8 @@ import java.util.Scanner;
 import Types_of_datastructure.LinkedList_dataStructure.CircularLinkedList;
 import Types_of_datastructure.LinkedList_dataStructure.SingleLinkedList;
 import Types_of_datastructure.LinkedList_dataStructure.doubleLinkedList;
+import Types_of_datastructure.Queue_dataStructure.ArrayQueue;
+import Types_of_datastructure.Queue_dataStructure.LinkedListQueue;
 import Types_of_datastructure.Stack_dataStructure.LinkedListStack;
 import Types_of_datastructure.Stack_dataStructure.arrayStack;
 import Types_of_datastructure.array_datastructure.DynamicArray;
@@ -25,7 +27,9 @@ public class MenuBar{
                                " Case 4: Double LinkedList\n"+
                                " Case 5: Circular LinkedList\n"+
                                " Case 6: ArrayStack\n"+
-                               " Case 7: LinledListStack");
+                               " Case 7: LinledListStack\n"+
+                               " Case 8: ArrayQueue\n"+
+                               " Case 9: LinkedListQueue");
             System.out.println("*****************************************");                   
             System.out.println("Enter the Choice:");
             choice = input.nextInt();
@@ -236,7 +240,7 @@ public class MenuBar{
                 case 6:
                     // define the proprties
                     int InChoice;
-                    System.out.println("Enter the size:");
+                    System.out.println("Enter the size of stack is:");
                     int size1 = input.nextInt();
                     arrayStack aStack =new arrayStack(size1);
 
@@ -322,11 +326,87 @@ public class MenuBar{
                         }
                     }
                     while(Inchoice <7&& Inchoice>0);
-                    break;  
+                    break; 
+                case 8:
+                    int Qchoice;
+                    System.out.println("Enter the size of queue is:");
+                    size = input.nextInt();
+                    ArrayQueue aQueue = new ArrayQueue(size);
+                    
+                    do{
+                        System.out.println("************CHOICE************");
+                        System.out.println(" Press 1: Push() methord\n"+
+                                           " Press 2: Pop() methord\n"+
+                                           " Press 3: peekTop() methord\n"+
+                                           " Press 4: PeekStart() methord\n"+
+                                           " Press 5: Diaplay() methord\n"+
+                                           " Press 6: Exit");
+                        System.out.println("******************************");
+                        
+                        System.out.println("Enter the choice:");
+                        Qchoice = input.nextInt();
+
+                        switch(Qchoice){
+                            case 1:
+                                aQueue.push();
+                                break;
+                            case 2:
+                                aQueue.pop();
+                                break;
+                            case 3:
+                                aQueue.peekTop();
+                                break;
+                            case 4:
+                                aQueue.peekStart();
+                                break;
+                            case 5:
+                                aQueue.display();
+                                break;                
+                        }
+                    }
+                    while (Qchoice<6&&Qchoice>0);
+                    break;
+
+                case 9:
+                    LinkedListQueue lQueue = new LinkedListQueue();
+                    int Qwish;
+                    do{
+                        System.out.println("*************CHOICE************");
+                        System.out.println("  Press 1: Push() methord\n"+
+                                           "  Press 2: pop() methord\n"+
+                                           "  press 3: PeekStart() methord\n"+
+                                           "  Press 4: PeekEnd() methord\n"+
+                                           "  Press 5: Display() methord\n"+
+                                           "  Press 6: Exit");
+                        System.out.println("******************************");
+                        System.out.println("Enter the choice:");
+                        Qwish = input.nextInt();
+                        
+                        // define the switch case
+                        switch(Qwish){
+                            case 1:
+                                lQueue.push();
+                                break;
+                            case 2:
+                                lQueue.pop();
+                                break;
+                            case 3:
+                                lQueue.peekStart();
+                                break;
+                            case 4:
+                                lQueue.peekEnd();
+                                break;
+                            case 5:
+                                lQueue.display();
+                                break;                
+                        }
+                    }
+                    while(Qwish<6&&Qwish>0);
+                    break;
             }
 
         }
-        while(choice<8);
+        while(choice<10);
         // close the Scanner
         input.close();
     }
