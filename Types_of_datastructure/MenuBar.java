@@ -5,6 +5,8 @@ import java.util.Scanner;
 import Types_of_datastructure.LinkedList_dataStructure.CircularLinkedList;
 import Types_of_datastructure.LinkedList_dataStructure.SingleLinkedList;
 import Types_of_datastructure.LinkedList_dataStructure.doubleLinkedList;
+import Types_of_datastructure.Stack_dataStructure.LinkedListStack;
+import Types_of_datastructure.Stack_dataStructure.arrayStack;
 import Types_of_datastructure.array_datastructure.DynamicArray;
 import Types_of_datastructure.array_datastructure.staticArray;
 
@@ -21,7 +23,9 @@ public class MenuBar{
                                " Case 2: Dynamic Array\n"+
                                " Case 3: Single LinkedList\n"+
                                " Case 4: Double LinkedList\n"+
-                               " Case 5: Circular LinkedList");
+                               " Case 5: Circular LinkedList\n"+
+                               " Case 6: ArrayStack\n"+
+                               " Case 7: LinledListStack");
             System.out.println("*****************************************");                   
             System.out.println("Enter the Choice:");
             choice = input.nextInt();
@@ -227,11 +231,102 @@ public class MenuBar{
                         }
                     } 
                     while(Initialchoice<5&&Initialchoice>0);
-                    break;     
+                    break; 
+                    
+                case 6:
+                    // define the proprties
+                    int InChoice;
+                    System.out.println("Enter the size:");
+                    int size1 = input.nextInt();
+                    arrayStack aStack =new arrayStack(size1);
+
+                    do{
+                        System.out.println("************CHOICE*************");
+                        System.out.println("    Press 1: Push() methord\n"+
+                                           "    Press 2: Pop() methord\n"+
+                                           "    Press 3: Peek() methord\n"+
+                                           "    Press 4: IsEmpty() methord\n"+
+                                           "    Press 5: Size() methord\n"+
+                                           "    Press 6: Display() methord\n"+
+                                           "    Press 7: Exit");
+                        System.out.println("*******************************");
+                        System.out.println("Enter the choice:");
+                        InChoice = input.nextInt();
+                        
+                        // define the switch case
+                        switch(InChoice){
+                            case 1:
+                                aStack.push();
+                                break;
+                            case 2:
+                                aStack.pop();
+                                break;
+                            case 3:
+                                aStack.peek();
+                                break;
+                            case 4:
+                                aStack.isEmpty();
+                                break;
+                            case 5:
+                                aStack.size();
+                                break;
+                            case 6:
+                                aStack.display();
+                                break;                
+
+                        }
+                    }
+                    while(InChoice <7&& InChoice>0);
+                    break;
+
+                case 7:
+                      // define the proprties
+                    int Inchoice;
+                    
+                    LinkedListStack LinkedListStack =new LinkedListStack();
+
+                    do{
+                        System.out.println("************CHOICE*************");
+                        System.out.println("    Press 1: Push() methord\n"+
+                                           "    Press 2: Pop() methord\n"+
+                                           "    Press 3: Peek() methord\n"+
+                                           "    Press 4: IsEmpty() methord\n"+
+                                           "    Press 5: Size() methord\n"+
+                                           "    Press 6: Display() methord\n"+
+                                           "    Press 7: Exit");
+                        System.out.println("*******************************");
+                        System.out.println("Enter the choice:");
+                        Inchoice = input.nextInt();
+                        
+                        // define the switch case
+                        switch(Inchoice){
+                            case 1:
+                                LinkedListStack.push();
+                                break;
+                            case 2:
+                                LinkedListStack.pop();
+                                break;
+                            case 3:
+                                LinkedListStack.peek();
+                                break;
+                            case 4:
+                                LinkedListStack.isEmpty();
+                                break;
+                            case 5:
+                                LinkedListStack.size();
+                                break;
+                            case 6:
+                                LinkedListStack.display();
+                                break;                
+
+                        }
+                    }
+                    while(Inchoice <7&& Inchoice>0);
+                    break;  
             }
 
         }
-        while(choice<5);
+        while(choice<8);
         // close the Scanner
         input.close();
     }
